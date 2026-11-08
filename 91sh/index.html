@@ -1,0 +1,708 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+  <title>91.short.com-短剧直播平台_热门剧集_在线观看_资源推荐</title>
+  <meta name="description" content="91.short.com 是短剧与直播爱好者的内容导航站，提供热门短剧在线观看入口、剧集推荐、主播动态与实时更新。页面汇聚高能短剧、人气直播间和深度剧评，帮你快速发现值得追的精彩内容。">
+  <meta name="keywords" content="91.short.com,短剧在线观看,热门短剧推荐,直播平台导航,短剧直播聚合">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23ff2d78'/%3E%3Ctext x='50' y='68' font-size='60' text-anchor='middle' fill='white' font-family='Arial'%3E91%3C/text%3E%3C/svg%3E">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --bg-dark: #0f0c1f;
+      --bg-card: #1a1630;
+      --bg-card-hover: #241e3f;
+      --primary: #ff2d78;
+      --primary-glow: rgba(255, 45, 120, 0.3);
+      --secondary: #7b4dff;
+      --secondary-glow: rgba(123, 77, 255, 0.25);
+      --text-main: #f0ecff;
+      --text-sub: #b7aedc;
+      --text-muted: #7a6f9c;
+      --border-light: rgba(255, 255, 255, 0.08);
+      --radius-card: 20px;
+      --radius-sm: 12px;
+      --shadow-card: 0 12px 28px -8px rgba(0, 0, 0, 0.6);
+      --shadow-hover: 0 18px 36px -10px rgba(255, 45, 120, 0.25);
+      --font-main: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    }
+    body {
+      background: var(--bg-dark);
+      color: var(--text-main);
+      font-family: var(--font-main);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; display: block; }
+    .wrapper { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+    .section-title {
+      font-size: 1.8rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .section-title::before {
+      content: '';
+      display: inline-block;
+      width: 6px;
+      height: 28px;
+      background: linear-gradient(180deg, var(--primary), var(--secondary));
+      border-radius: 4px;
+    }
+    .section-title small {
+      font-size: 0.9rem;
+      font-weight: 400;
+      color: var(--text-sub);
+      margin-left: 8px;
+    }
+    .card-base {
+      background: var(--bg-card);
+      border-radius: var(--radius-card);
+      border: 1px solid var(--border-light);
+      box-shadow: var(--shadow-card);
+      transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+    }
+    .card-base:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-hover);
+      background: var(--bg-card-hover);
+    }
+    /* 导航 */
+    .nav-bar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(15, 12, 31, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-light);
+      padding: 12px 0;
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+      font-size: 1.5rem;
+      letter-spacing: -0.03em;
+    }
+    .logo-badge {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      padding: 4px 10px;
+      border-radius: 30px;
+      font-size: 1.1rem;
+      color: #fff;
+      box-shadow: 0 0 18px var(--primary-glow);
+    }
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 18px;
+      list-style: none;
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--text-sub);
+    }
+    .nav-links a { transition: color 0.2s; }
+    .nav-links a:hover { color: var(--primary); }
+    /* Banner */
+    .hero {
+      padding: 48px 0 32px;
+      background: radial-gradient(ellipse at 70% 20%, rgba(123, 77, 255, 0.18), transparent 60%),
+                  radial-gradient(ellipse at 20% 80%, rgba(255, 45, 120, 0.12), transparent 50%);
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 40px;
+      align-items: center;
+    }
+    .hero h1 {
+      font-size: 3.2rem;
+      font-weight: 800;
+      line-height: 1.2;
+      letter-spacing: -0.03em;
+      margin-bottom: 16px;
+    }
+    .hero h1 span {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hero-desc {
+      font-size: 1.1rem;
+      color: var(--text-sub);
+      max-width: 560px;
+      margin-bottom: 28px;
+    }
+    .search-box {
+      display: flex;
+      background: var(--bg-card);
+      border-radius: 60px;
+      padding: 6px 6px 6px 24px;
+      border: 1px solid var(--border-light);
+      box-shadow: 0 0 30px rgba(123, 77, 255, 0.15);
+      max-width: 480px;
+      margin-bottom: 28px;
+    }
+    .search-box input {
+      flex: 1;
+      background: transparent;
+      border: none;
+      outline: none;
+      color: var(--text-main);
+      font-size: 1rem;
+      padding: 8px 0;
+    }
+    .search-box input::placeholder { color: var(--text-muted); }
+    .search-box button {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      border: none;
+      border-radius: 60px;
+      padding: 10px 26px;
+      color: #fff;
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: opacity 0.2s;
+    }
+    .search-box button:hover { opacity: 0.9; }
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 8px;
+    }
+    .hero-tag {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid var(--border-light);
+      padding: 6px 18px;
+      border-radius: 40px;
+      font-size: 0.85rem;
+      color: var(--text-sub);
+      transition: all 0.2s;
+    }
+    .hero-tag:hover {
+      background: rgba(255, 45, 120, 0.15);
+      border-color: var(--primary);
+      color: var(--text-main);
+    }
+    .hero-visual {
+      background: linear-gradient(145deg, #221b3f, #16112b);
+      border-radius: 32px;
+      padding: 28px;
+      border: 1px solid var(--border-light);
+      box-shadow: 0 30px 50px -20px rgba(0,0,0,0.8);
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-visual::after {
+      content: '91';
+      position: absolute;
+      bottom: -10px;
+      right: 0px;
+      font-size: 10rem;
+      font-weight: 900;
+      color: rgba(255, 255, 255, 0.02);
+      line-height: 1;
+      pointer-events: none;
+    }
+    .hero-visual .mini-card {
+      display: flex;
+      gap: 14px;
+      align-items: center;
+      padding: 12px;
+      background: rgba(255, 255, 255, 0.04);
+      border-radius: 16px;
+      margin-bottom: 12px;
+      border: 1px solid var(--border-light);
+    }
+    .mini-poster {
+      width: 56px;
+      height: 56px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      color: white;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+    .mini-info h4 { font-size: 1rem; margin-bottom: 2px; }
+    .mini-info p { font-size: 0.8rem; color: var(--text-sub); }
+    /* 分类入口 */
+    .cat-grid {
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+      gap: 14px;
+      margin: 30px 0 20px;
+    }
+    .cat-item {
+      background: var(--bg-card);
+      border-radius: 60px;
+      padding: 12px 8px;
+      text-align: center;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--text-sub);
+      border: 1px solid var(--border-light);
+      transition: all 0.2s;
+    }
+    .cat-item:hover {
+      background: var(--bg-card-hover);
+      border-color: var(--primary);
+      color: var(--text-main);
+      transform: translateY(-2px);
+    }
+    /* 热门推荐卡片 */
+    .recommend-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 22px;
+      margin-top: 10px;
+    }
+    .rec-card {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .rec-card .rec-poster {
+      height: 100px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, #2a2148, #1a1433);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      font-weight: 800;
+      color: rgba(255, 255, 255, 0.15);
+      margin-bottom: 4px;
+      border: 1px solid var(--border-light);
+    }
+    .rec-card h3 { font-size: 1.1rem; font-weight: 700; }
+    .rec-tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 4px 0; }
+    .rec-tag {
+      font-size: 0.7rem;
+      background: rgba(123, 77, 255, 0.2);
+      padding: 3px 10px;
+      border-radius: 20px;
+      color: #c7b9ff;
+      border: 1px solid rgba(123, 77, 255, 0.3);
+    }
+    .rec-desc { font-size: 0.85rem; color: var(--text-sub); line-height: 1.5; }
+    .rec-meta {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-top: 6px;
+      border-top: 1px solid var(--border-light);
+      padding-top: 10px;
+    }
+    /* 最新更新列表 */
+    .update-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .update-item {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 14px 20px;
+      background: var(--bg-card);
+      border-radius: 16px;
+      border: 1px solid var(--border-light);
+      transition: background 0.2s;
+    }
+    .update-item:hover { background: var(--bg-card-hover); }
+    .update-time {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      min-width: 70px;
+    }
+    .update-title { font-weight: 600; font-size: 0.95rem; }
+    .update-desc { font-size: 0.8rem; color: var(--text-sub); margin-left: auto; }
+    /* 深度解析 */
+    .deep-article {
+      background: var(--bg-card);
+      border-radius: var(--radius-card);
+      padding: 36px;
+      border: 1px solid var(--border-light);
+      margin: 30px 0;
+    }
+    .deep-article h3 {
+      font-size: 1.4rem;
+      margin: 24px 0 12px;
+      color: var(--primary);
+    }
+    .deep-article p {
+      color: var(--text-sub);
+      margin-bottom: 16px;
+      font-size: 0.98rem;
+      line-height: 1.8;
+    }
+    /* FAQ 双栏 */
+    .faq-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    .faq-item {
+      background: var(--bg-card);
+      border-radius: 16px;
+      padding: 20px 22px;
+      border: 1px solid var(--border-light);
+    }
+    .faq-item h4 {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: var(--primary);
+    }
+    .faq-item p {
+      font-size: 0.9rem;
+      color: var(--text-sub);
+      line-height: 1.6;
+    }
+    /* 评论 */
+    .comment-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .comment-item {
+      display: flex;
+      gap: 14px;
+      padding: 16px 20px;
+      background: var(--bg-card);
+      border-radius: 16px;
+      border: 1px solid var(--border-light);
+    }
+    .avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      color: white;
+      flex-shrink: 0;
+    }
+    .comment-content { flex: 1; }
+    .comment-header {
+      display: flex;
+      gap: 12px;
+      align-items: baseline;
+      margin-bottom: 4px;
+    }
+    .nickname { font-weight: 600; font-size: 0.95rem; }
+    .comment-time { font-size: 0.7rem; color: var(--text-muted); }
+    .comment-text { font-size: 0.9rem; color: var(--text-sub); }
+    /* 资讯卡片 */
+    .news-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .news-card {
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .news-date { font-size: 0.75rem; color: var(--text-muted); }
+    .news-card h4 { font-size: 1.05rem; font-weight: 700; }
+    .news-card p { font-size: 0.85rem; color: var(--text-sub); }
+    /* 页脚 */
+    .footer {
+      margin-top: 60px;
+      padding: 40px 0;
+      border-top: 1px solid var(--border-light);
+      background: rgba(0, 0, 0, 0.2);
+    }
+    .footer-inner {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 30px;
+    }
+    .footer-col p { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 6px; }
+    .footer-col a { color: var(--text-sub); font-size: 0.85rem; }
+    .footer-col a:hover { color: var(--primary); }
+    /* 响应式 */
+    @media (max-width: 900px) {
+      .hero-grid { grid-template-columns: 1fr; }
+      .hero h1 { font-size: 2.4rem; }
+      .cat-grid { grid-template-columns: repeat(4, 1fr); }
+      .faq-grid { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+    }
+    @media (max-width: 600px) {
+      .hero h1 { font-size: 1.9rem; }
+      .cat-grid { grid-template-columns: repeat(2, 1fr); }
+      .update-item { flex-wrap: wrap; }
+      .update-desc { margin-left: 0; width: 100%; }
+      .deep-article { padding: 20px; }
+      .section-title { font-size: 1.4rem; }
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<!-- 导航 -->
+<header class="nav-bar">
+  <div class="wrapper nav-inner">
+    <div class="logo">
+      <span class="logo-badge">91</span>
+      <span>short.com</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="/#hot-recommend">热门推荐</a></li>
+      <li><a href="/#latest-update">最新更新</a></li>
+      <li><a href="/#deep-analysis">深度解析</a></li>
+      <li><a href="/#category-index">分类索引</a></li>
+      <li><a href="/#faq">常见问题</a></li>
+      <li><a href="/#comments">用户评论</a></li>
+      <li><a href="/#news">资讯动态</a></li>
+    </ul>
+  </div>
+</header>
+
+<!-- Banner -->
+<section class="hero">
+  <div class="wrapper hero-grid">
+    <div>
+      <h1>91.short.com <span>短剧直播</span> 内容导航</h1>
+      <p class="hero-desc">汇聚热门短剧、高能直播与深度剧评，一站式发现值得追的精彩内容。每日更新剧集动态、主播动向与口碑榜单。</p>
+      <div class="search-box">
+        <input type="text" placeholder="搜索短剧、主播、剧集关键词...">
+        <button>搜索</button>
+      </div>
+      <div class="hero-tags">
+        <a href="/#hot-recommend" class="hero-tag">🔥 热门短剧</a>
+        <a href="/#latest-update" class="hero-tag">📺 直播预告</a>
+        <a href="/#deep-analysis" class="hero-tag">🎬 深度剧评</a>
+        <a href="/#category-index" class="hero-tag">📂 分类筛选</a>
+        <a href="/#comments" class="hero-tag">💬 用户讨论</a>
+        <a href="/#faq" class="hero-tag">❓ 常见问题</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="mini-card">
+        <div class="mini-poster" style="background: linear-gradient(135deg, #ff2d78, #ff6b3d);">逆</div>
+        <div class="mini-info">
+          <h4>逆袭人生</h4>
+          <p>更新至第12集 · 热度 9.8w</p>
+        </div>
+      </div>
+      <div class="mini-card">
+        <div class="mini-poster" style="background: linear-gradient(135deg, #7b4dff, #4d9fff);">甜</div>
+        <div class="mini-info">
+          <h4>甜心攻略</h4>
+          <p>今晚20:00直播 · 预约 2.3w</p>
+        </div>
+      </div>
+      <div class="mini-card">
+        <div class="mini-poster" style="background: linear-gradient(135deg, #ffb800, #ff6b3d);">王</div>
+        <div class="mini-info">
+          <h4>王者归来</h4>
+          <p>新剧上线 · 评分 9.2</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 分类入口 -->
+<div class="wrapper">
+  <div class="cat-grid" id="category-index">
+    <a href="/#hot-recommend" class="cat-item">🔥 都市逆袭</a>
+    <a href="/#hot-recommend" class="cat-item">💖 甜宠恋爱</a>
+    <a href="/#hot-recommend" class="cat-item">⚔️ 古装权谋</a>
+    <a href="/#hot-recommend" class="cat-item">🎭 悬疑推理</a>
+    <a href="/#hot-recommend" class="cat-item">😂 搞笑喜剧</a>
+    <a href="/#hot-recommend" class="cat-item">🚀 热血玄幻</a>
+    <a href="/#hot-recommend" class="cat-item">🎤 直播互动</a>
+    <a href="/#hot-recommend" class="cat-item">🎬 短剧速看</a>
+  </div>
+</div>
+
+<!-- 热门推荐 -->
+<div class="wrapper" id="hot-recommend" style="margin-top: 40px;">
+  <h2 class="section-title">热门推荐 <small>编辑精选 · 高热度短剧与直播</small></h2>
+  <div class="recommend-grid">
+    <div class="card-base rec-card">
+      <div class="rec-poster">逆</div>
+      <h3>逆袭人生</h3>
+      <div class="rec-tags"><span class="rec-tag">都市</span><span class="rec-tag">逆袭</span><span class="rec-tag">爽剧</span></div>
+      <p class="rec-desc">外卖小哥意外获得神秘系统，从底层一路逆袭，剧情反转不断，爽点密集。</p>
+      <div class="rec-meta"><span>🔥 9.8w 热度</span><span>更新至12集</span></div>
+    </div>
+    <div class="card-base rec-card">
+      <div class="rec-poster">甜</div>
+      <h3>甜心攻略</h3>
+      <div class="rec-tags"><span class="rec-tag">甜宠</span><span class="rec-tag">恋爱</span><span class="rec-tag">直播</span></div>
+      <p class="rec-desc">高冷总裁与元气主播的甜蜜互动，直播间撒糖不断，观众直呼上头。</p>
+      <div class="rec-meta"><span>❤️ 8.2w 热度</span><span>今晚20:00直播</span></div>
+    </div>
+    <div class="card-base rec-card">
+      <div class="rec-poster">王</div>
+      <h3>王者归来</h3>
+      <div class="rec-tags"><span class="rec-tag">古装</span><span class="rec-tag">权谋</span><span class="rec-tag">热血</span></div>
+      <p class="rec-desc">被废太子隐忍十年，一朝回朝掀起朝堂风云，谋略与打戏双在线。</p>
+      <div class="rec-meta"><span>⭐ 9.2 评分</span><span>新剧上线</span></div>
+    </div>
+    <div class="card-base rec-card">
+      <div class="rec-poster">暗</div>
+      <h3>暗夜追凶</h3>
+      <div class="rec-tags"><span class="rec-tag">悬疑</span><span class="rec-tag">推理</span><span class="rec-tag">烧脑</span></div>
+      <p class="rec-desc">刑警与犯罪心理学专家联手追查连环案，每集都有新线索，反转让人意想不到。</p>
+      <div class="rec-meta"><span>🔥 7.5w 热度</span><span>更新至第8集</span></div>
+    </div>
+    <div class="card-base rec-card">
+      <div class="rec-poster">玄</div>
+      <h3>玄天战纪</h3>
+      <div class="rec-tags"><span class="rec-tag">玄幻</span><span class="rec-tag">热血</span><span class="rec-tag">特效</span></div>
+      <p class="rec-desc">少年觉醒远古血脉，闯秘境、战强敌，特效拉满的玄幻短剧新作。</p>
+      <div class="rec-meta"><span>⭐ 8.9 评分</span><span>更新至第6集</span></div>
+    </div>
+    <div class="card-base rec-card">
+      <div class="rec-poster">笑</div>
+      <h3>爆笑客栈</h3>
+      <div class="rec-tags"><span class="rec-tag">喜剧</span><span class="rec-tag">短剧</span><span class="rec-tag">解压</span></div>
+      <p class="rec-desc">一家不正经的客栈，一群不靠谱的伙计，每集一个爆笑故事，下饭首选。</p>
+      <div class="rec-meta"><span>😂 6.8w 热度</span><span>全24集已完结</span></div>
+    </div>
+    <div class="card-base rec-card">
+      <div class="rec-poster">重</div>
+      <h3>重生之影后</h3>
+      <div class="rec-tags"><span class="rec-tag">重生</span><span class="rec-tag">娱乐圈</span><span class="rec-tag">逆袭</span></div>
+      <p class="rec-desc">前世被闺蜜背叛，重生后手撕渣男贱女，重回影后宝座，打脸剧情超解气。</p>
+      <div class="rec-meta"><span>🔥 8.1w 热度</span><span>更新至第16集</span></div>
+    </div>
+    <div class="card-base rec-card">
+      <div class="rec-poster">星</div>
+      <h3>星夜live秀</h3>
+      <div class="rec-tags"><span class="rec-tag">直播</span><span class="rec-tag">互动</span><span class="rec-tag">音乐</span></div>
+      <p class="rec-desc">每晚不同主题的直播live，粉丝点歌互动，氛围感拉满的线上音乐会。</p>
+      <div class="rec-meta"><span>🎤 2.3w 在看</span><span>每晚21:00开播</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- 最新更新 -->
+<div class="wrapper" id="latest-update" style="margin-top: 50px;">
+  <h2 class="section-title">最新更新 <small>剧集与直播动态 · 2026-11-07</small></h2>
+  <div class="update-list">
+    <div class="update-item"><span class="update-time">今日 18:20</span><span class="update-title">逆袭人生</span><span class="update-desc">第12集上线：主角身份即将揭晓，反转剧情引爆讨论</span></div>
+    <div class="update-item"><span class="update-time">今日 17:45</span><span class="update-title">甜心攻略</span><span class="update-desc">今晚20:00直播间特别企划：主创连麦互动</span></div>
+    <div class="update-item"><span class="update-time">今日 16:10</span><span class="update-title">暗夜追凶</span><span class="update-desc">第8集更新：关键证人出现，案情迎来重大转折</span></div>
+    <div class="update-item"><span class="update-time">今日 15:30</span><span class="update-title">王者归来</span><span class="update-desc">新剧上线首日热度破2w，服化道获好评</span></div>
+    <div class="update-item"><span class="update-time">今日 14:00</span><span class="update-title">玄天战纪</span><span class="update-desc">第6集上线：秘境试炼开启，特效场面升级</span></div>
+    <div class="update-item"><span class="update-time">今日 12:20</span><span class="update-title">星夜live秀</span><span class="update-desc">今晚主题“怀旧金曲夜”，预约人数已破万</span></div>
+    <div class="update-item"><span class="update-time">今日 10:15</span><span class="update-title">重生之影后</span><span class="update-desc">第16集更新：影后反击战正式打响</span></div>
+    <div class="update-item"><span class="update-time">昨日 22:00</span><span class="update-title">爆笑客栈</span><span class="update-desc">全24集完结，番外篇正在筹备中</span></div>
+  </div>
+</div>
+
+<!-- 深度解析 -->
+<div class="wrapper" id="deep-analysis">
+  <h2 class="section-title">深度解析 <small>短剧与直播内容趋势观察</small></h2>
+  <div class="deep-article">
+    <p>在短视频内容消费日益碎片化的今天，短剧与直播正在成为大众娱乐的重要入口。91.short.com 作为一个聚合型内容导航平台，试图为观众梳理出值得关注的短剧作品与直播主播。从目前的热门内容来看，都市逆袭、甜宠恋爱和古装权谋仍是三大主力类型。这类作品通常以快节奏、强冲突、高密度反转来抓住观众注意力，每集几分钟的体量恰好契合通勤、午休等碎片化场景。</p>
+    <h3>短剧的类型特点与消费节奏</h3>
+    <p>短剧最显著的特征是“黄金三秒”原则——开篇即抛出冲突或悬念，让观众迅速代入。以《逆袭人生》为例，第一集就完成了主角从被欺压到获得金手指的转变，后续每集都保持至少一个爽点输出。这种密度是传统长剧难以企及的。与此同时，直播内容的实时互动性为观众提供了另一种参与感，弹幕、连麦、打赏等机制让观看行为本身变成一种社交体验。</p>
+    <h3>人物塑造与演员表现</h3>
+    <p>受限于时长，短剧的人物塑造往往依赖标签化和强记忆点的台词。反派要坏得彻底，主角要惨得真实，配角要自带笑点。这种处理方式虽然牺牲了部分深度，但换来了极高的辨识度。不少短剧演员凭借精准的情绪爆发力在社交平台出圈，进而反哺作品热度。直播领域则更看重主播的个人魅力与临场反应，能否在几小时内持续输出有趣内容，是留住观众的关键。</p>
+    <h3>适合人群与观看建议</h3>
+    <p>如果你喜欢快节奏、强情绪的内容，短剧会是非常好的下饭选择。偏好逻辑严密的观众可以从悬疑推理类入手，比如《暗夜追凶》这类注重线索铺陈的作品。而追求轻松氛围的观众，甜宠和喜剧类短剧能提供稳定的情绪价值。直播方面，建议先通过片段或预告了解主播风格，再决定是否追看完整场次。91.short.com 的分类索引和热门榜单可以帮助你快速筛选。</p>
+  </div>
+</div>
+
+<!-- FAQ -->
+<div class="wrapper" id="faq" style="margin-top: 40px;">
+  <h2 class="section-title">常见问题 <small>关于短剧与直播的答疑</small></h2>
+  <div class="faq-grid">
+    <div class="faq-item"><h4>91.short.com 是什么类型的网站？</h4><p>它是一个短剧与直播内容的导航聚合页，提供热门作品推荐、更新动态、分类筛选和用户讨论，帮助观众快速发现值得看的内容。</p></div>
+    <div class="faq-item"><h4>这里的短剧需要付费观看吗？</h4><p>页面本身是导航性质，不直接提供播放源。具体作品的观看方式和费用取决于发布平台，建议通过页面推荐入口前往对应平台了解。</p></div>
+    <div class="faq-item"><h4>直播一般什么时间开播？</h4><p>不同主播的开播时间各异，页面会展示近期直播预告和热门场次。常见时段集中在晚间20:00至23:00，建议关注更新列表获取最新信息。</p></div>
+    <div class="faq-item"><h4>如何找到自己喜欢的短剧类型？</h4><p>可以通过顶部分类入口快速筛选都市、甜宠、古装、悬疑等标签，也可以查看热门推荐中的类型标签，点击即可聚焦对应内容。</p></div>
+    <div class="faq-item"><h4>短剧一般多长时间更新一集？</h4><p>多数短剧保持日更或周更节奏，部分热门作品会一次性放出全集。页面“最新更新”模块会标注具体集数和上线时间，方便追更。</p></div>
+    <div class="faq-item"><h4>页面上的评分和热度是怎么来的？</h4><p>评分和热度为编辑根据播放数据、用户讨论和互动量综合整理的参考值，不代表官方数据，仅供浏览决策时参考。</p></div>
+  </div>
+</div>
+
+<!-- 用户评论 -->
+<div class="wrapper" id="comments" style="margin-top: 50px;">
+  <h2 class="section-title">用户评论 <small>真实观众讨论 · 近30天</small></h2>
+  <div class="comment-list">
+    <div class="comment-item"><div class="avatar">追</div><div class="comment-content"><div class="comment-header"><span class="nickname">追剧小能手</span><span class="comment-time">2天前</span></div><p class="comment-text">逆袭人生真的太上头了，一口气刷了10集，主角打脸反派的时候太爽了！</p></div></div>
+    <div class="comment-item"><div class="avatar">甜</div><div class="comment-content"><div class="comment-header"><span class="nickname">甜心控</span><span class="comment-time">3天前</span></div><p class="comment-text">甜心攻略的直播互动感很强，主播很会接梗，看着很开心。</p></div></div>
+    <div class="comment-item"><div class="avatar">悬</div><div class="comment-content"><div class="comment-header"><span class="nickname">悬疑爱好者</span><span class="comment-time">5天前</span></div><p class="comment-text">暗夜追凶的推理线写得很扎实，但更新太慢了，等得着急。</p></div></div>
+    <div class="comment-item"><div class="avatar">路</div><div class="comment-content"><div class="comment-header"><span class="nickname">路人甲</span><span class="comment-time">1周前</span></div><p class="comment-text">短剧节奏确实快，但有些剧的演技有点尬，希望推荐质量能再把关一下。</p></div></div>
+    <div class="comment-item"><div class="avatar">玄</div><div class="comment-content"><div class="comment-header"><span class="nickname">玄幻迷</span><span class="comment-time">1周前</span></div><p class="comment-text">玄天战纪的特效在短剧里算很良心了，打斗场面挺燃的。</p></div></div>
+    <div class="comment-item"><div class="avatar">笑</div><div class="comment-content"><div class="comment-header"><span class="nickname">笑点低</span><span class="comment-time">1周前</span></div><p class="comment-text">爆笑客栈下饭神器，每集都笑到喷饭，推荐给需要解压的朋友。</p></div></div>
+    <div class="comment-item"><div class="avatar">重</div><div class="comment-content"><div class="comment-header"><span class="nickname">重生粉</span><span class="comment-time">2周前</span></div><p class="comment-text">重生之影后的复仇线很带感，就是反派有点降智，不过看着爽就行。</p></div></div>
+    <div class="comment-item"><div class="avatar">直</div><div class="comment-content"><div class="comment-header"><span class="nickname">直播常客</span><span class="comment-time">2周前</span></div><p class="comment-text">星夜live秀的氛围不错，主播唱歌好听，互动环节也很有意思。</p></div></div>
+    <div class="comment-item"><div class="avatar">编</div><div class="comment-content"><div class="comment-header"><span class="nickname">编辑小助手</span><span class="comment-time">2周前</span></div><p class="comment-text">感谢大家的反馈，我们会持续优化推荐质量，欢迎多提建议！</p></div></div>
+    <div class="comment-item"><div class="avatar">新</div><div class="comment-content"><div class="comment-header"><span class="nickname">新来的</span><span class="comment-time">3周前</span></div><p class="comment-text">刚发现这个导航站，分类做得很清楚，找剧方便多了。</p></div></div>
+    <div class="comment-item"><div class="avatar">吐</div><div class="comment-content"><div class="comment-header"><span class="nickname">吐槽君</span><span class="comment-time">3周前</span></div><p class="comment-text">有些短剧的广告植入太硬了，希望推荐的时候能标注一下。</p></div></div>
+    <div class="comment-item"><div class="avatar">古</div><div class="comment-content"><div class="comment-header"><span class="nickname">古风控</span><span class="comment-time">4周前</span></div><p class="comment-text">王者归来的服化道在短剧里算精致的，剧情也还可以，值得一看。</p></div></div>
+  </div>
+</div>
+
+<!-- 相关资讯 -->
+<div class="wrapper" id="news" style="margin-top: 50px;">
+  <h2 class="section-title">相关资讯 <small>短剧与直播行业动态</small></h2>
+  <div class="news-grid">
+    <div class="card-base news-card"><span class="news-date">2026-11-05</span><h4>短剧市场持续升温，精品化趋势明显</h4><p>越来越多专业团队入局短剧赛道，制作水准和剧本质量明显提升。</p></div>
+    <div class="card-base news-card"><span class="news-date">2026-11-03</span><h4>直播互动玩法升级，观众参与感更强</h4><p>弹幕点歌、实时投票等互动形式成为直播间标配，用户粘性增强。</p></div>
+    <div class="card-base news-card"><span class="news-date">2026-10-28</span><h4>都市逆袭题材领跑短剧热度榜</h4><p>数据显示，都市逆袭类短剧在播放量和讨论度上持续领先。</p></div>
+    <div class="card-base news-card"><span class="news-date">2026-10-22</span><h4>短剧演员出圈路径多元化</h4><p>短视频片段、直播连麦、社交互动成为短剧演员积累人气的重要方式。</p></div>
+    <div class="card-base news-card"><span class="news-date">2026-10-15</span><h4>悬疑短剧迎来创作高峰</h4><p>多部悬疑推理短剧上线，紧凑的叙事和反转设计受到观众好评。</p></div>
+    <div class="card-base news-card"><span class="news-date">2026-10-08</span><h4>直播平台加强内容审核，行业规范化发展</h4><p>各平台持续完善审核机制，推动直播内容生态健康有序发展。</p></div>
+  </div>
+</div>
+
+<!-- 页脚 -->
+<footer class="footer">
+  <div class="wrapper footer-inner">
+    <div class="footer-col">
+      <p style="font-weight:600; color:var(--text-main); margin-bottom:12px;">91.short.com</p>
+      <p>短剧与直播内容导航 · 发现值得追的好内容</p>
+      <p>© 2026 91.short.com 保留所有权利</p>
+    </div>
+    <div class="footer-col">
+      <p style="font-weight:600; color:var(--text-main); margin-bottom:12px;">友情链接</p>
+      <p><a href="/#hot-recommend">热门短剧推荐</a></p>
+      <p><a href="/#latest-update">每日更新追踪</a></p>
+      <p><a href="/#deep-analysis">深度内容解析</a></p>
+    </div>
+    <div class="footer-col" style="max-width:300px;">
+      <p style="font-weight:600; color:var(--text-main); margin-bottom:12px;">免责声明</p>
+      <p>本站为内容导航页面，不存储任何视频文件。所有内容链接均指向第三方平台，版权归原作者所有。如有疑问请联系我们。</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+                                                           </html>
