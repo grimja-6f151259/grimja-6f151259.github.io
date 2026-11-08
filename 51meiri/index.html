@@ -1,0 +1,1152 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>51每日大赛官网首页-每日赛事解析与参赛指南_大赛推荐与排期速览</title>
+  <meta name="description" content="51每日大赛官网首页提供2026年11月7日最新赛事排期、每日大赛规则解析、参赛作品推荐与选手动态。从新手入门到深度拆解，一站式了解51每日大赛的玩法、评审偏好与热门赛道，助你快速找到今日值得关注的大赛内容。">
+  <meta name="keywords" content="51每日大赛,每日大赛官网,大赛首页,每日赛事解析,参赛指南">
+  <style>
+    :root {
+      --bg-page: #f7f9fc;
+      --bg-card: #ffffff;
+      --bg-soft: #eef2f7;
+      --text-primary: #1a2634;
+      --text-secondary: #4b5e70;
+      --text-muted: #7c8b9c;
+      --brand-primary: #2a6f97;
+      --brand-secondary: #4a9fd8;
+      --brand-accent: #f4a261;
+      --border-light: #dde5ed;
+      --shadow-sm: 0 4px 12px rgba(0, 20, 40, 0.04);
+      --shadow-md: 0 12px 28px rgba(0, 30, 60, 0.08);
+      --radius-card: 18px;
+      --radius-sm: 10px;
+      --font-sans: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', 'Noto Sans', sans-serif;
+      --transition: 0.2s ease;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background: var(--bg-page);
+      color: var(--text-primary);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    ul, ol {
+      list-style: none;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* 顶部导航 */
+    .masthead {
+      background: var(--bg-card);
+      border-bottom: 1px solid var(--border-light);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(8px);
+      background: rgba(255, 255, 255, 0.88);
+    }
+
+    .masthead-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      padding: 12px 0;
+      gap: 12px;
+    }
+
+    .logo-badge {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo-mark {
+      background: linear-gradient(135deg, var(--brand-primary), var(--brand-secondary));
+      width: 38px;
+      height: 38px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 800;
+      font-size: 20px;
+      box-shadow: 0 6px 12px rgba(42, 111, 151, 0.25);
+    }
+
+    .logo-text {
+      font-weight: 700;
+      font-size: 1.3rem;
+      letter-spacing: -0.3px;
+      color: var(--text-primary);
+    }
+
+    .logo-text span {
+      color: var(--brand-primary);
+      font-weight: 800;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 18px;
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+
+    .nav-links a {
+      color: var(--text-secondary);
+      padding: 4px 0;
+      border-bottom: 2px solid transparent;
+      transition: var(--transition);
+    }
+
+    .nav-links a:hover {
+      color: var(--brand-primary);
+      border-bottom-color: var(--brand-primary);
+    }
+
+    /* 首屏 Banner */
+    .hero-section {
+      padding: 40px 0 32px;
+      background: linear-gradient(165deg, #f0f7fe 0%, #ffffff 70%);
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .hero-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .hero-title {
+      font-size: 2.6rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      margin-bottom: 12px;
+      color: var(--text-primary);
+    }
+
+    .hero-title .accent {
+      color: var(--brand-primary);
+      background: linear-gradient(145deg, var(--brand-primary), #2c8bc4);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-desc {
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      max-width: 720px;
+      margin-bottom: 24px;
+    }
+
+    .search-box {
+      display: flex;
+      align-items: center;
+      max-width: 560px;
+      width: 100%;
+      margin: 0 auto 28px;
+      background: white;
+      border-radius: 60px;
+      padding: 6px 6px 6px 22px;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border-light);
+      transition: var(--transition);
+    }
+
+    .search-box:focus-within {
+      border-color: var(--brand-secondary);
+      box-shadow: 0 0 0 4px rgba(74, 159, 216, 0.15);
+    }
+
+    .search-box input {
+      flex: 1;
+      border: none;
+      outline: none;
+      font-size: 1rem;
+      padding: 10px 0;
+      background: transparent;
+      color: var(--text-primary);
+    }
+
+    .search-box input::placeholder {
+      color: var(--text-muted);
+    }
+
+    .search-box button {
+      background: var(--brand-primary);
+      color: white;
+      border: none;
+      border-radius: 40px;
+      padding: 10px 24px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: var(--transition);
+      white-space: nowrap;
+    }
+
+    .search-box button:hover {
+      background: #1e5a7d;
+    }
+
+    .hero-cta-group {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    .btn-pill {
+      display: inline-block;
+      padding: 8px 20px;
+      background: white;
+      border: 1px solid var(--border-light);
+      border-radius: 40px;
+      font-size: 0.92rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+      transition: var(--transition);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .btn-pill:hover {
+      border-color: var(--brand-secondary);
+      color: var(--brand-primary);
+      background: #f8fcff;
+      transform: translateY(-2px);
+    }
+
+    /* 通用 Section */
+    .section {
+      padding: 44px 0;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      margin-bottom: 26px;
+    }
+
+    .section-title {
+      font-size: 1.8rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      color: var(--text-primary);
+      position: relative;
+    }
+
+    .section-title::after {
+      content: '';
+      display: block;
+      width: 48px;
+      height: 4px;
+      background: var(--brand-primary);
+      border-radius: 4px;
+      margin-top: 6px;
+    }
+
+    .section-sub {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+    }
+
+    /* 内容简介 / 平台介绍 */
+    .intro-card {
+      background: var(--bg-card);
+      border-radius: var(--radius-card);
+      padding: 32px 36px;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border-light);
+      max-width: 100%;
+    }
+
+    .intro-card p {
+      font-size: 1.05rem;
+      color: var(--text-secondary);
+      margin-bottom: 18px;
+      line-height: 1.75;
+    }
+
+    .intro-card p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* 热门推荐卡片网格 */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+      gap: 24px;
+    }
+
+    .content-card {
+      background: var(--bg-card);
+      border-radius: var(--radius-card);
+      padding: 22px 20px 20px;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border-light);
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .content-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+      border-color: #cfdce8;
+    }
+
+    .card-tag {
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+      color: var(--brand-primary);
+      background: #e6f0f9;
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 30px;
+      margin-bottom: 12px;
+      align-self: flex-start;
+    }
+
+    .card-title {
+      font-size: 1.22rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: var(--text-primary);
+      line-height: 1.4;
+    }
+
+    .card-desc {
+      font-size: 0.92rem;
+      color: var(--text-secondary);
+      margin-bottom: 16px;
+      flex: 1;
+    }
+
+    .card-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border-light);
+      padding-top: 14px;
+      margin-top: 6px;
+    }
+
+    .card-meta .hot {
+      color: var(--brand-accent);
+      font-weight: 600;
+    }
+
+    /* 最新更新列表 */
+    .update-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .update-item {
+      background: var(--bg-card);
+      border-radius: 16px;
+      padding: 16px 22px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 12px 24px;
+      border: 1px solid var(--border-light);
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+    }
+
+    .update-item:hover {
+      background: #fbfdff;
+      border-color: #c2d6e6;
+    }
+
+    .update-time {
+      font-weight: 600;
+      font-size: 0.85rem;
+      color: var(--brand-primary);
+      background: #e9f2fa;
+      padding: 4px 12px;
+      border-radius: 30px;
+      white-space: nowrap;
+    }
+
+    .update-name {
+      font-weight: 700;
+      font-size: 1.02rem;
+      color: var(--text-primary);
+      min-width: 160px;
+    }
+
+    .update-brief {
+      color: var(--text-secondary);
+      font-size: 0.93rem;
+      flex: 1;
+    }
+
+    /* 分类入口 */
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: 14px;
+    }
+
+    .category-item {
+      background: var(--bg-card);
+      border-radius: 60px;
+      padding: 14px 18px;
+      text-align: center;
+      font-weight: 600;
+      color: var(--text-secondary);
+      border: 1px solid var(--border-light);
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .category-item:hover {
+      background: var(--brand-primary);
+      color: white;
+      border-color: var(--brand-primary);
+      transform: scale(1.02);
+    }
+
+    .category-item .cat-icon {
+      font-size: 1.2rem;
+    }
+
+    /* 深度解析正文 */
+    .deep-analysis {
+      background: var(--bg-card);
+      border-radius: var(--radius-card);
+      padding: 36px 40px;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border-light);
+    }
+
+    .deep-analysis h3 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin: 24px 0 12px;
+      color: var(--text-primary);
+    }
+
+    .deep-analysis h3:first-of-type {
+      margin-top: 0;
+    }
+
+    .deep-analysis p {
+      color: var(--text-secondary);
+      margin-bottom: 16px;
+      font-size: 1.02rem;
+      line-height: 1.8;
+      text-align: justify;
+    }
+
+    .deep-analysis strong {
+      color: var(--brand-primary);
+      font-weight: 700;
+    }
+
+    /* 体验指南 */
+    .guide-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 20px;
+    }
+
+    .guide-item {
+      background: var(--bg-card);
+      border-radius: 16px;
+      padding: 24px 20px;
+      border: 1px solid var(--border-light);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .guide-item h4 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: var(--brand-primary);
+    }
+
+    .guide-item p {
+      color: var(--text-secondary);
+      font-size: 0.94rem;
+    }
+
+    /* FAQ 手风琴样式（简化） */
+    .faq-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+
+    .faq-item {
+      background: var(--bg-card);
+      border-radius: 16px;
+      padding: 20px 26px;
+      border: 1px solid var(--border-light);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .faq-question {
+      font-weight: 700;
+      font-size: 1.08rem;
+      color: var(--text-primary);
+      display: flex;
+      gap: 12px;
+      align-items: baseline;
+    }
+
+    .faq-question .q-mark {
+      color: var(--brand-primary);
+      font-size: 1.3rem;
+      font-weight: 800;
+    }
+
+    .faq-answer {
+      margin-top: 10px;
+      margin-left: 28px;
+      color: var(--text-secondary);
+      font-size: 0.96rem;
+      line-height: 1.7;
+    }
+
+    /* 用户评论 */
+    .comment-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 18px;
+    }
+
+    .comment-card {
+      background: var(--bg-card);
+      border-radius: 16px;
+      padding: 18px 20px;
+      border: 1px solid var(--border-light);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .comment-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+
+    .comment-nickname {
+      font-weight: 700;
+      font-size: 0.94rem;
+      color: var(--brand-primary);
+    }
+
+    .comment-date {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    .comment-text {
+      font-size: 0.92rem;
+      color: var(--text-secondary);
+      line-height: 1.65;
+    }
+
+    /* 相关资讯 */
+    .news-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 22px;
+    }
+
+    .news-card {
+      background: var(--bg-card);
+      border-radius: 18px;
+      padding: 22px 22px 18px;
+      border: 1px solid var(--border-light);
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+    }
+
+    .news-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .news-date {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+      font-weight: 500;
+    }
+
+    .news-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: var(--text-primary);
+      line-height: 1.4;
+    }
+
+    .news-summary {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+    }
+
+    /* 页脚 */
+    .site-footer {
+      background: #1f2e3c;
+      color: #cbd8e6;
+      padding: 44px 0 24px;
+      margin-top: 40px;
+    }
+
+    .footer-inner {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .footer-brand {
+      max-width: 280px;
+    }
+
+    .footer-brand .logo-text {
+      color: white;
+      font-size: 1.4rem;
+      margin-bottom: 12px;
+    }
+
+    .footer-brand p {
+      font-size: 0.88rem;
+      line-height: 1.7;
+      opacity: 0.8;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 32px;
+    }
+
+    .footer-col h5 {
+      color: white;
+      font-weight: 600;
+      margin-bottom: 12px;
+      font-size: 0.95rem;
+    }
+
+    .footer-col a {
+      display: block;
+      font-size: 0.85rem;
+      opacity: 0.7;
+      margin-bottom: 8px;
+      transition: var(--transition);
+    }
+
+    .footer-col a:hover {
+      opacity: 1;
+      color: white;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      margin-top: 32px;
+      padding-top: 22px;
+      font-size: 0.8rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 12px;
+      opacity: 0.7;
+    }
+
+    /* 响应式 */
+    @media (max-width: 768px) {
+      .hero-title {
+        font-size: 1.9rem;
+      }
+      .hero-desc {
+        font-size: 1rem;
+      }
+      .section-title {
+        font-size: 1.5rem;
+      }
+      .deep-analysis {
+        padding: 26px 22px;
+      }
+      .intro-card {
+        padding: 24px 22px;
+      }
+      .nav-links {
+        gap: 6px 12px;
+        font-size: 0.85rem;
+      }
+      .masthead-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .search-box {
+        flex-wrap: wrap;
+        padding: 10px 16px;
+      }
+      .search-box input {
+        min-width: 150px;
+      }
+      .search-box button {
+        width: 100%;
+        margin-top: 8px;
+      }
+      .update-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+      }
+      .footer-inner {
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero-title {
+        font-size: 1.6rem;
+      }
+      .card-grid {
+        grid-template-columns: 1fr;
+      }
+      .category-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .comment-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- 顶部导航 -->
+  <header class="masthead">
+    <div class="container masthead-inner">
+      <div class="logo-badge">
+        <div class="logo-mark">51</div>
+        <div class="logo-text"><span>51</span>每日大赛</div>
+      </div>
+      <nav class="nav-links" id="main-nav">
+        <a href="/#hero">首页</a>
+        <a href="/#hot-recommend">热门推荐</a>
+        <a href="/#latest-updates">最新更新</a>
+        <a href="/#categories">分类入口</a>
+        <a href="/#deep-analysis">深度解析</a>
+        <a href="/#faq">常见问题</a>
+        <a href="/#comments">用户评论</a>
+        <a href="/#news">相关资讯</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- 首屏 Banner -->
+  <section class="hero-section" id="hero">
+    <div class="container hero-content">
+      <h1 class="hero-title"><span class="accent">51每日大赛官网首页</span> · 每日赛事全景指南</h1>
+      <p class="hero-desc">一站式追踪今日大赛排期、评审动态与热门作品。2026年11月7日已更新12场赛事，涵盖创作、竞技与趣味挑战赛道。</p>
+      <div class="search-box">
+        <input type="text" placeholder="搜索大赛名称、选手或关键词…" aria-label="搜索大赛">
+        <button type="button">搜索</button>
+      </div>
+      <div class="hero-cta-group">
+        <a href="/#hot-recommend" class="btn-pill">🔥 今日热门</a>
+        <a href="/#latest-updates" class="btn-pill">📅 最新排期</a>
+        <a href="/#categories" class="btn-pill">🧭 分类导航</a>
+        <a href="/#deep-analysis" class="btn-pill">📖 深度解析</a>
+        <a href="/#faq" class="btn-pill">❓ 参赛答疑</a>
+        <a href="/#comments" class="btn-pill">💬 社区热议</a>
+        <a href="/#news" class="btn-pill">📰 赛事资讯</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 内容简介 / 平台介绍 -->
+  <section class="section" id="intro">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">关于51每日大赛</h2>
+        <span class="section-sub">每天一场，等你来战</span>
+      </div>
+      <div class="intro-card">
+        <p>51每日大赛官网首页聚合了每日不同主题的竞赛与创作挑战，从短篇故事、摄影快拍到逻辑推理、创意编程，用户可在此快速浏览当天所有赛事的规则、奖金池与评审阵容。页面按时间线展示近期赛事，并附有编辑精选的参赛作品解析，帮助新老选手理解评审偏好。</p>
+        <p>如果你是刚接触每日大赛的新人，可以从“入门指南”与FAQ中了解参赛流程与常见误区；如果你是资深玩家，深度解析与热门作品区能让你快速把握今日大赛的竞争焦点。所有内容均围绕51每日大赛官网首页的日常更新设计，兼顾移动端阅读与桌面端信息密度，适合收藏为浏览器书签，每日打开即可获取最新赛况。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 热门内容推荐 -->
+  <section class="section" id="hot-recommend">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">今日热门推荐</h2>
+        <span class="section-sub">2026年11月7日 · 实时热度</span>
+      </div>
+      <div class="card-grid">
+        <div class="content-card">
+          <span class="card-tag">短篇创作</span>
+          <h3 class="card-title">「午夜便利店」微小说挑战</h3>
+          <p class="card-desc">以24小时便利店为背景，用800字构建悬疑反转。评审看重氛围与结尾冲击力。</p>
+          <div class="card-meta"><span>🔥 热度 9.8k</span><span>⏳ 剩余 6 小时</span></div>
+        </div>
+        <div class="content-card">
+          <span class="card-tag">摄影竞技</span>
+          <h3 class="card-title">光影几何·城市建筑快拍</h3>
+          <p class="card-desc">只用手机拍摄，捕捉城市建筑中的几何线条与光影对比。今日主题为“螺旋”。</p>
+          <div class="card-meta"><span>🔥 热度 8.2k</span><span>📸 已投 340 件</span></div>
+        </div>
+        <div class="content-card">
+          <span class="card-tag">逻辑推理</span>
+          <h3 class="card-title">数字迷阵·限时解谜赛</h3>
+          <p class="card-desc">每轮10道逻辑题，正确率与用时综合排名。今日特别加入“二进制迷宫”新题型。</p>
+          <div class="card-meta"><span>🔥 热度 9.1k</span><span>🧠 参赛 1.2k 人</span></div>
+        </div>
+        <div class="content-card">
+          <span class="card-tag">创意编程</span>
+          <h3 class="card-title">Code Golf 代码高尔夫</h3>
+          <p class="card-desc">用尽可能少的字符实现指定功能，今日题目：生成斐波那契螺旋文本图。</p>
+          <div class="card-meta"><span>🔥 热度 7.5k</span><span>💻 语言不限</span></div>
+        </div>
+        <div class="content-card">
+          <span class="card-tag">知识竞答</span>
+          <h3 class="card-title">世界冷知识·百题擂台</h3>
+          <p class="card-desc">涵盖历史、地理、科学，每题限时15秒。今日最高连胜纪录为47题。</p>
+          <div class="card-meta"><span>🔥 热度 8.8k</span><span>🏆 连胜榜更新</span></div>
+        </div>
+        <div class="content-card">
+          <span class="card-tag">短剧剧本</span>
+          <h3 class="card-title">三分钟反转剧场</h3>
+          <p class="card-desc">提交3分钟短剧剧本，要求包含至少两次反转。今日评审为资深短剧制片人。</p>
+          <div class="card-meta"><span>🔥 热度 8.0k</span><span>🎬 已投 89 份</span></div>
+        </div>
+        <div class="content-card">
+          <span class="card-tag">数据可视化</span>
+          <h3 class="card-title">美丽数据·图表设计赛</h3>
+          <p class="card-desc">使用开放数据制作可视化作品，今日主题“2026年城市通勤时间”。</p>
+          <div class="card-meta"><span>🔥 热度 6.9k</span><span>📊 工具不限</span></div>
+        </div>
+        <div class="content-card">
+          <span class="card-tag">即兴演讲</span>
+          <h3 class="card-title">60秒观点输出</h3>
+          <p class="card-desc">随机抽取话题，录制60秒音频或视频表达观点。今日话题：“AI是否应该拥有署名权”。</p>
+          <div class="card-meta"><span>🔥 热度 7.2k</span><span>🎙️ 音频/视频</span></div>
+        </div>
+        <div class="content-card">
+          <span class="card-tag">手绘插画</span>
+          <h3 class="card-title">幻想生物设计日</h3>
+          <p class="card-desc">根据关键词“深海·机械”，设计一只幻想生物。风格不限，需包含三视图。</p>
+          <div class="card-meta"><span>🔥 热度 8.5k</span><span>🎨 已投 210 件</span></div>
+        </div>
+        <div class="content-card">
+          <span class="card-tag">音乐混音</span>
+          <h3 class="card-title">24小时Loop挑战</h3>
+          <p class="card-desc">使用官方提供的采样包，制作一段30秒的循环音乐。今日采样包含环境音。</p>
+          <div class="card-meta"><span>🔥 热度 6.5k</span><span>🎧 已投 76 份</span></div>
+        </div>
+        <div class="content-card">
+          <span class="card-tag">产品脑洞</span>
+          <h3 class="card-title">未来小物设计赛</h3>
+          <p class="card-desc">构思一个解决日常小痛点的产品概念，附草图与说明。评审注重可行性与创意。</p>
+          <div class="card-meta"><span>🔥 热度 7.0k</span><span>💡 已投 54 份</span></div>
+        </div>
+        <div class="content-card">
+          <span class="card-tag">美食创作</span>
+          <h3 class="card-title">十分钟料理挑战</h3>
+          <p class="card-desc">使用限定食材，在10分钟内完成一道料理并拍照。今日主食材：南瓜与奶酪。</p>
+          <div class="card-meta"><span>🔥 热度 9.0k</span><span>🍳 已投 182 份</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 最新更新 / 热播 / 热门动态 -->
+  <section class="section" id="latest-updates">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">最新更新动态</h2>
+        <span class="section-sub">2026年11月7日 更新</span>
+      </div>
+      <div class="update-list">
+        <div class="update-item"><span class="update-time">今日 14:30</span><span class="update-name">「午夜便利店」微小说</span><span class="update-brief">投稿量突破800篇，编辑精选已更新12篇，评审开启第一轮筛选。</span></div>
+        <div class="update-item"><span class="update-time">今日 13:20</span><span class="update-name">光影几何·城市建筑快拍</span><span class="update-brief">新增“螺旋”主题标签，热门作品《旋转楼梯》获赞2.3k。</span></div>
+        <div class="update-item"><span class="update-time">今日 12:00</span><span class="update-name">数字迷阵·限时解谜赛</span><span class="update-brief">第二轮排行榜刷新，选手“矩阵猫”以满分4分12秒暂列第一。</span></div>
+        <div class="update-item"><span class="update-time">今日 11:15</span><span class="update-name">Code Golf 代码高尔夫</span><span class="update-brief">题目公布：生成斐波那契螺旋文本图。已有23人提交方案。</span></div>
+        <div class="update-item"><span class="update-time">今日 10:40</span><span class="update-name">世界冷知识·百题擂台</span><span class="update-brief">今日百题已全部上线，新增“地理冷门”题库，连胜榜前三名更新。</span></div>
+        <div class="update-item"><span class="update-time">今日 09:50</span><span class="update-name">三分钟反转剧场</span><span class="update-brief">剧本提交截止倒计时8小时，已有89份作品，制片人评审通道开启。</span></div>
+        <div class="update-item"><span class="update-time">今日 09:10</span><span class="update-name">美丽数据·图表设计赛</span><span class="update-brief">开放数据集下载，新增交通时间热力图示例，参赛者已上传30件。</span></div>
+        <div class="update-item"><span class="update-time">今日 08:30</span><span class="update-name">60秒观点输出</span><span class="update-brief">今日话题公布：“AI是否应该拥有署名权”，音频赛道新增12条投稿。</span></div>
+        <div class="update-item"><span class="update-time">今日 08:00</span><span class="update-name">幻想生物设计日</span><span class="update-brief">关键词“深海·机械”发布，已有210件作品，三视图提交率76%。</span></div>
+        <div class="update-item"><span class="update-time">昨日 22:00</span><span class="update-name">24小时Loop挑战</span><span class="update-brief">采样包下载量突破1.5k，首批76份作品已进入试听池。</span></div>
+        <div class="update-item"><span class="update-time">昨日 20:15</span><span class="update-name">未来小物设计赛</span><span class="update-brief">评审发布设计提示：注重可行性，已收到54份产品概念草图。</span></div>
+        <div class="update-item"><span class="update-time">昨日 18:40</span><span class="update-name">十分钟料理挑战</span><span class="update-brief">限定食材“南瓜与奶酪”公布，182份料理作品已上传，人气最高作品获赞1.8k。</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 分类入口 -->
+  <section class="section" id="categories">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">赛事分类入口</h2>
+        <span class="section-sub">快速定位你感兴趣的赛道</span>
+      </div>
+      <div class="category-grid">
+        <a href="/#hot-recommend" class="category-item"><span class="cat-icon">✍️</span> 文字创作</a>
+        <a href="/#hot-recommend" class="category-item"><span class="cat-icon">📷</span> 视觉摄影</a>
+        <a href="/#hot-recommend" class="category-item"><span class="cat-icon">🧠</span> 逻辑解谜</a>
+        <a href="/#hot-recommend" class="category-item"><span class="cat-icon">💻</span> 创意编程</a>
+        <a href="/#hot-recommend" class="category-item"><span class="cat-icon">🎨</span> 手绘插画</a>
+        <a href="/#hot-recommend" class="category-item"><span class="cat-icon">🎵</span> 音乐音频</a>
+        <a href="/#hot-recommend" class="category-item"><span class="cat-icon">🍳</span> 美食料理</a>
+        <a href="/#hot-recommend" class="category-item"><span class="cat-icon">📊</span> 数据可视化</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 深度解析正文 -->
+  <section class="section" id="deep-analysis">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">深度解析：如何看懂51每日大赛</h2>
+        <span class="section-sub">编辑视角 · 参赛策略</span>
+      </div>
+      <div class="deep-analysis">
+        <p>每天打开51每日大赛官网首页，你面对的不是单一比赛，而是一个精心编排的赛事矩阵。从短篇创作到逻辑推理，从摄影快拍到代码高尔夫，不同赛道在同一个页面内并行更新，既考验选手的选择策略，也考验读者的信息筛选能力。本文从内容生态、评审偏好和参赛节奏三个维度，帮你理解这个每日大赛平台的核心逻辑。</p>
+        <h3>一、赛道设计：每日不重样，但内核稳定</h3>
+        <p>51每日大赛的赛道看似随机，实际上遵循“高频+低频”的组合逻辑。高频赛道如逻辑推理、知识竞答每日固定出现，保证用户每天都有基础赛事可参与；低频赛道如短剧剧本、音乐混音则每周轮换一次，给创作者留出充足的准备时间。这种设计让官网首页既有稳定的日常流量，又能通过特殊赛道制造惊喜。对于参赛者来说，<strong>每天浏览51每日大赛官网首页</strong>的第一件事，就是确认今日低频赛道是否与自己的专长匹配。</p>
+        <h3>二、评审偏好：细读规则中的加分项</h3>
+        <p>以今日热门「午夜便利店」微小说挑战为例，规则中明确写出“氛围权重30%、反转冲击力40%、语言精炼度30%”。许多新人只关注故事完整度，却忽略了评审对结尾反转的偏爱。在51每日大赛官网首页的深度解析模块，编辑会定期拆解获奖作品的得分点，比如某篇获奖微小说在结尾处只用了一句话完成视角逆转，恰好命中评分表中“意料之外、情理之中”的加分项。理解这些偏好，比盲目多投更重要。</p>
+        <h3>三、节奏把控：参赛与浏览的平衡</h3>
+        <p>每日大赛意味着每天都有机会，但也容易陷入“什么都想参加、什么都做不好”的困境。官网首页的“热门推荐”与“最新更新”两个模块，实际上给出了两种节奏参考：热门推荐适合观察竞争烈度，最新更新适合发现低竞争赛道。建议新手先选择1-2个固定赛道深耕，同时用碎片时间浏览51每日大赛官网首页的深度解析与FAQ，逐步扩展能力边界。资深选手则可以利用分类入口快速切换赛道，在多个比赛中积累积分与曝光。</p>
+        <h3>四、从首页到领奖台：一条可复制的路径</h3>
+        <p>51每日大赛官网首页不仅是信息入口，也是参赛策略的起点。一个典型的获奖路径是：通过首页热门推荐锁定今日高价值赛道，阅读深度解析了解评审偏好，在FAQ中确认作品提交格式，最后在用户评论中观察其他选手的讨论热点。完成作品后，回到首页的最新更新模块查看审核进度。这条路径每天只需花费20-30分钟，却能显著提升参赛效率与获奖概率。</p>
+        <p>总而言之，51每日大赛官网首页的价值在于将分散的赛事信息整合为可操作的日常指南。无论你是偶尔参与的爱好者，还是追求排名的重度玩家，养成每天浏览官网首页、阅读深度解析的习惯，都能让你在每日大赛的生态中更快找到自己的位置。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 体验指南模块 -->
+  <section class="section" id="experience-guide">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">体验指南</h2>
+        <span class="section-sub">让每天的大赛浏览更高效</span>
+      </div>
+      <div class="guide-grid">
+        <div class="guide-item">
+          <h4>📌 首页信息分层</h4>
+          <p>首屏Banner展示今日核心提示，下方热门推荐与最新更新分区清晰。手机端自动折叠次要信息，保证快速定位。</p>
+        </div>
+        <div class="guide-item">
+          <h4>🔍 搜索与筛选</h4>
+          <p>顶部搜索框支持大赛名称、选手、关键词模糊搜索。分类入口提供八大赛道快捷跳转，减少翻页次数。</p>
+        </div>
+        <div class="guide-item">
+          <h4>📱 移动端适配</h4>
+          <p>所有卡片与列表在手机端自动调整为单列或双列，评论与FAQ采用可点击展开设计，适合通勤时浏览。</p>
+        </div>
+        <div class="guide-item">
+          <h4>⭐ 收藏与追更</h4>
+          <p>页面结构稳定，栏目ID固定，可直接收藏为书签。最新更新模块按时间倒序排列，方便追更每日赛事动态。</p>
+        </div>
+        <div class="guide-item">
+          <h4>🧭 推荐路径扩展</h4>
+          <p>从热门推荐进入深度解析，再通过FAQ解答疑问，最后在相关资讯中了解赛事趋势，形成完整的信息闭环。</p>
+        </div>
+        <div class="guide-item">
+          <h4>💬 社区互动入口</h4>
+          <p>用户评论区展示真实参赛讨论，可从中发现同好与对手。评论按时间展示近30天内容，保持活跃感。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ 常见问题 -->
+  <section class="section" id="faq">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">常见问题</h2>
+        <span class="section-sub">关于51每日大赛的高频疑问</span>
+      </div>
+      <div class="faq-grid">
+        <div class="faq-item">
+          <div class="faq-question"><span class="q-mark">Q</span> 51每日大赛官网首页每天几点更新赛事？</div>
+          <div class="faq-answer">常规赛道一般在早上8:00-9:00之间公布当日题目与规则，特殊赛道（如短剧剧本、音乐混音）通常在当周周一公布。建议每天上午9点后刷新首页，此时最新更新模块会显示全部当日赛事状态。部分限时赛的截止时间在晚间，首页会实时倒计时提醒。</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question"><span class="q-mark">Q</span> 新人应该从哪个赛道开始参加？</div>
+          <div class="faq-answer">建议从知识竞答或逻辑解谜开始，这类赛道规则简单、反馈即时，容易建立信心。如果偏好创作，可以从“微小说挑战”或“60秒观点输出”入手，作品篇幅短、试错成本低。官网首页的深度解析模块有针对新人的赛道选择建议，可优先阅读。</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question"><span class="q-mark">Q</span> 如何知道自己的作品是否通过初审？</div>
+          <div class="faq-answer">在51每日大赛官网首页的“最新更新”模块中，会滚动显示各赛道初审进度与入围名单。你也可以在用户评论区看到其他选手的讨论。通常提交后2-4小时内会显示审核状态，若超过6小时未更新，建议检查作品格式是否符合规则要求。</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question"><span class="q-mark">Q</span> 每日大赛的评审标准在哪里查看？</div>
+          <div class="faq-answer">每个赛道的详情页顶部会列出该赛事的评审维度与权重。首页的深度解析正文也会定期拆解热门赛道的评分偏好，例如微小说侧重反转与氛围，摄影赛看重构图与主题契合度。关注这些分析可以帮你在创作前明确方向，减少无效努力。</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question"><span class="q-mark">Q</span> 如果当天没有时间参加，还能看到作品吗？</div>
+          <div class="faq-answer">可以。51每日大赛官网首页的“热门推荐”与“最新更新”会保留过去24小时的赛事回顾，深度解析模块也会精选优秀作品进行点评。即使不参赛，浏览首页也能了解每日大赛的内容生态，为下一次参赛积累灵感。</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question"><span class="q-mark">Q</span> 51每日大赛官网首页支持手机端操作吗？</div>
+          <div class="faq-answer">完全支持。页面采用响应式设计，在手机端导航会自动折叠为横向滑动，卡片与列表调整为适合触摸的尺寸。搜索框、评论区和FAQ均可直接点击交互。建议将首页添加到手机桌面书签，每天一键打开即可浏览最新赛事。</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 用户评论 -->
+  <section class="section" id="comments">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">用户评论</h2>
+        <span class="section-sub">来自参赛者与读者的真实声音</span>
+      </div>
+      <div class="comment-grid">
+        <div class="comment-card"><div class="comment-header"><span class="comment-nickname">半岛铁盒</span><span class="comment-date">2026-11-07</span></div><div class="comment-text">今天的微小说题目很戳我，便利店夜班题材写起来很有画面感，已投。希望评审能看到我的结尾反转。</div></div>
+        <div class="comment-card"><div class="comment-header"><span class="comment-nickname">矩阵猫</span><span class="comment-date">2026-11-07</span></div><div class="comment-text">数字迷阵今天新题型有点意思，二进制迷宫卡了10分钟，不过还是满分通过，爽！</div></div>
+        <div class="comment-card"><div class="comment-header"><span class="comment-nickname">光影捕手</span><span class="comment-date">2026-11-06</span></div><div class="comment-text">城市建筑快拍的主题“螺旋”很好发挥，推荐去老城区拍旋转楼梯，光线好的时候出片率很高。</div></div>
+        <div class="comment-card"><div class="comment-header"><span class="comment-nickname">代码苦手</span><span class="comment-date">2026-11-06</span></div><div class="comment-text">Code Golf的题目越来越难了，斐波那契螺旋文本图我写了200多字符，看大佬只用80个字符，跪了。</div></div>
+        <div class="comment-card"><div class="comment-header"><span class="comment-nickname">冷知识库</span><span class="comment-date">2026-11-07</span></div><div class="comment-text">百题擂台的冷知识库更新很及时，今天遇到一道关于马里亚纳海沟的题，正好昨天看过类似资料。</div></div>
+        <div class="comment-card"><div class="comment-header"><span class="comment-nickname">反转剧场</span><span class="comment-date">2026-11-05</span></div><div class="comment-text">三分钟剧本要求两次反转，有点挑战，写了四稿才满意。希望制片人评审能给出专业意见。</div></div>
+        <div class="comment-card"><div class="comment-header"><span class="comment-nickname">数据可视化迷</span><span class="comment-date">2026-11-06</span></div><div class="comment-text">图表设计赛的开放数据质量不错，交通时间热力图做出来效果很直观，就是配色方案还在纠结。</div></div>
+        <div class="comment-card"><div class="comment-header"><span class="comment-nickname">深海机械师</span><span class="comment-date">2026-11-07</span></div><div class="comment-text">幻想生物设计日的关键词“深海·机械”太棒了，画了一只机械水母，三视图已提交，求点赞。</div></div>
+        <div class="comment-card"><div class="comment-header"><span class="comment-nickname">Loop达人</span><span class="comment-date">2026-11-05</span></div><div class="comment-text">24小时Loop挑战的采样包质量很好，环境音很有氛围感，做了一段深海主题的循环，期待被试听。</div></div>
+        <div class="comment-card"><div class="comment-header"><span class="comment-nickname">产品脑洞王</span><span class="comment-date">2026-11-06</span></div><div class="comment-text">未来小物设计赛的评审偏好很务实，草图太花哨反而容易扣分，建议把功能说明写清楚。</div></div>
+        <div class="comment-card"><div class="comment-header"><span class="comment-nickname">南瓜奶酪</span><span class="comment-date">2026-11-07</span></div><div class="comment-text">十分钟料理挑战的限定食材好搭，南瓜奶酪浓汤十分钟搞定，已拍照上传，希望味道能加分。</div></div>
+        <div class="comment-card"><div class="comment-header"><span class="comment-nickname">即兴表达者</span><span class="comment-date">2026-11-06</span></div><div class="comment-text">60秒观点输出的今日话题很尖锐，AI署名权这个话题立场容易踩雷，但录制过程很过瘾。</div></div>
+        <div class="comment-card"><div class="comment-header"><span class="comment-nickname">首页常驻</span><span class="comment-date">2026-11-07</span></div><div class="comment-text">每天上班第一件事就是刷51每日大赛官网首页，看看今天有什么新赛道，已经变成习惯了。</div></div>
+        <div class="comment-card"><div class="comment-header"><span class="comment-nickname">评审观察员</span><span class="comment-date">2026-11-05</span></div><div class="comment-text">深度解析模块的评审偏好拆解很有用，上次按分析调整了作品结构，果然入围了。</div></div>
+        <div class="comment-card"><div class="comment-header"><span class="comment-nickname">轻量玩家</span><span class="comment-date">2026-11-04</span></div><div class="comment-text">感觉最近热门推荐的竞争太激烈了，反而是一些小赛道容易出头，建议多挖掘分类入口里的冷门赛事。</div></div>
+        <div class="comment-card"><div class="comment-header"><span class="comment-nickname">星海拾贝</span><span class="comment-date">2026-11-06</span></div><div class="comment-text">首页排版看着舒服，信息密度刚好，不会太挤也不会太空，适合我这种碎片时间浏览的人。</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 相关资讯 -->
+  <section class="section" id="news">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">相关资讯</h2>
+        <span class="section-sub">赛事动态与趋势观察</span>
+      </div>
+      <div class="news-grid">
+        <div class="news-card">
+          <div class="news-date">2026-11-07</div>
+          <div class="news-title">51每日大赛本月新增“数据可视化”赛道，参赛人数翻倍</div>
+          <div class="news-summary">自11月引入数据可视化赛道以来，日均提交作品数增长120%，成为增长最快的赛道。编辑部分析了受欢迎的图表类型与工具偏好。</div>
+        </div>
+        <div class="news-card">
+          <div class="news-date">2026-11-06</div>
+          <div class="news-title">深度解析：为何微小说挑战的获奖作品偏爱“结尾一句话反转”</div>
+          <div class="news-summary">统计近30期获奖作品发现，超过70%的作品在结尾处使用了一句话反转。评审表示这种结构最能体现短篇创作的爆发力。</div>
+        </div>
+        <div class="news-card">
+          <div class="news-date">2026-11-05</div>
+          <div class="news-title">Code Golf 参赛语言分布公布：Python 仍居首位，Rust 异军突起</div>
+          <div class="news-summary">官方统计显示，Python以42%的提交量排名第一，Rust凭借简洁的语法在字符数竞争中表现亮眼，占比升至15%。</div>
+        </div>
+        <div class="news-card">
+          <div class="news-date">2026-11-04</div>
+          <div class="news-title">摄影赛道评委访谈：手机摄影作品占比超过八成</div>
+          <div class="news-summary">光影几何系列赛事中，手机摄影作品占比达83%，评委表示设备不再是门槛，构图与主题表达才是得分关键。</div>
+        </div>
+        <div class="news-card">
+          <div class="news-date">2026-11-03</div>
+          <div class="news-title">51每日大赛官网首页改版：新增“体验指南”与FAQ快捷入口</div>
+          <div class="news-summary">本次改版优化了移动端阅读体验，并在首页中部增加体验指南模块，帮助新用户快速了解赛事节奏与参赛流程。</div>
+        </div>
+        <div class="news-card">
+          <div class="news-date">2026-11-02</div>
+          <div class="news-title">短剧剧本赛道将推出“制片人直选”环节，优秀作品有望影视化</div>
+          <div class="news-summary">从下周起，三分钟反转剧场将引入制片人直选机制，每期评选一部最具潜力的剧本进行专业开发，进一步打通创作与产业。</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 页脚 -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <div class="logo-text"><span style="color:#6cb6e4;">51</span>每日大赛</div>
+          <p>每天一场，发现你的竞技场。51每日大赛官网首页聚合最新赛事、深度解析与社区讨论，为参赛者与读者提供清晰的内容导航。</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-col">
+            <h5>快速入口</h5>
+            <a href="/#hot-recommend">热门推荐</a>
+            <a href="/#latest-updates">最新更新</a>
+            <a href="/#categories">分类入口</a>
+            <a href="/#deep-analysis">深度解析</a>
+          </div>
+          <div class="footer-col">
+            <h5>帮助与社区</h5>
+            <a href="/#faq">常见问题</a>
+            <a href="/#comments">用户评论</a>
+            <a href="/#news">相关资讯</a>
+            <a href="/#experience-guide">体验指南</a>
+          </div>
+          <div class="footer-col">
+            <h5>友情链接</h5>
+            <a href="#">内容创作社区</a>
+            <a href="#">摄影爱好者联盟</a>
+            <a href="#">代码竞赛中心</a>
+            <a href="#">数据可视化小组</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 51每日大赛官网首页 · 内容仅供信息参考</span>
+        <span>免责声明：本页面赛事信息与评论均为模拟内容，不构成参赛建议。</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- 固定脚本 -->
+  <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</body>
+                                                                            </html>
